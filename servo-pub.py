@@ -10,14 +10,14 @@ QOS = 0
 KEEPALIVE = 60
 
 # Set hostname for MQTT broker
-BROKER = 'iot.cs.calvin.edu'
+BROKER = '***********'
 
 # Indicates whether broker requires authentication.
 # Set to True for authenticaion, set to False for anonymous brokers
 BROKER_AUTHENTICATION = True
 
-USERNAME = 'cs326'   # broker authentication username (if required)
-PASSWORD = 'piot'   # broker authentication password (if required)
+USERNAME = '*******'   # broker authentication username (if required)
+PASSWORD = '*******'   # broker authentication password (if required)
 
 # Callback when a connection has been established with the MQTT broker
 def on_connect(client, userdata, flags, reason_code, properties):
