@@ -8,7 +8,7 @@ It is a security system that uses a camera and a servo to open a door. Someone w
 We built it using the kits given to us for our CS326 class. This included a rasberry pi, a servo motor, a camera, and all the necessary electrical components. We mainly used python for coding except for the webpage which used html.
 
 ## How to use it
-First there are two different servo files. One is for publishing to the raspberry pi that controls the servo motor, and one is subscribing to that publisher. The publisher should be connected 
+First there are two different servo files. One is for publishing to the raspberry pi with the servo, and the other is for subscribing to that publisher. The publisher should be connected to two pushbuttons that are used to send an open or close signal to the servo. The php file is used to create a webpage to view the database created by opening and closing the door.
 
 ## Challenges we ran into
 Initially we wanted to use face recognition to make the system automatic. However, we ran into many problems with setting it up using the cameras we had. The libraries didn't work for one camera, and the other camera didn't have enough processing power for the facial recognition software
