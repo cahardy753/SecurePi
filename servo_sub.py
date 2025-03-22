@@ -8,7 +8,7 @@ from datetime import datetime
 import time
 
 # Constants
-TOPIC = 'iws3/servo'
+TOPIC = 'name/servo'
 PORT = 1883
 QOS = 0
 KEEPALIVE = 60
@@ -20,14 +20,14 @@ pi = pigpio.pi()
 pi.set_PWM_frequency(PWM, 50)
 
 # Set hostname for MQTT broker
-BROKER = 'iot.cs.calvin.edu'
+BROKER = '************'
 # Indicates whether broker requires authentication.
 # Set to True for authenticaion, set to False for anonymous brokers
 BROKER_AUTHENTICATION = True
 
 # Note: these constants must be set if broker requires authentication
-USERNAME = 'cs326'   # broker authentication username (if required)
-PASSWORD = 'piot'   # broker authentication password (if required)
+USERNAME = '******'   # broker authentication username (if required)
+PASSWORD = '******'   # broker authentication password (if required)
 
 # Setup SQL database
 DB_PATH = 'door_log.db'
