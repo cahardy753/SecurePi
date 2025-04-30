@@ -1,6 +1,6 @@
 <?php
 # Isaac Schaafsma (iws3), Cliff Hardy (cah43)
-# Used code from lab 9
+# Used code from lab9
 # This file creates a webpage for our databasse
 ?>
 <html>
