@@ -1,6 +1,8 @@
+<?php
 # Isaac Schaafsma (iws3), Cliff Hardy (cah43)
 # Used code from lab 9
 # This file creates a webpage for our databasse
+?>
 <html>
 <head>
     <title>Raspberry Pi Door Log Cloud Data</title>
