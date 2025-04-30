@@ -1,4 +1,5 @@
 # Isaac Schaafsma (iws3), Cliff Hardy (cah43)
+# Used code from lab5 and lab9
 # This program controls a microservo using MQTT
 # and inserts data into a SQL database
 
