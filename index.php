@@ -1,42 +1,39 @@
+# Isaac Schaafsma (iws3), Cliff Hardy (cah43)
+# Used code from lab 9
+# This file creates a webpage for our databasse
 <html>
 <head>
-    <title>Door Access Logs</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
-        table { width: 50%; margin: auto; border-collapse: collapse; }
-        th, td { border: 1px solid black; padding: 8px; text-align: center; }
-    </style>
+    <title>Raspberry Pi Door Log Cloud Data</title>
 </head>
 <body>
+<h2>Raspberry Pi Door Log Cloud Data</h2>
 
-<h2>Door Access Log</h2>
+<?php
+# Connect to SQL cloud database
+$host = "*****";
+$user = "*****";
+$pass = "*****";
+$db = "defaultdb";
+$port = "*****";
+$con = pg_connect("host=$host port=$port dbname=$db user=$user password=$pass")
+    or die ("Could not connect to SQL server\n");
 
-<table>
-    <tr>
-        <th>Timestamp</th>
-        <th>Status</th>
-    </tr>
+# Query temperature data
+$query = 'SELECT * FROM doorlog ORDER by datetime DESC LIMIT 10';
+$result = pg_query($con, $query) or die('Query failed');
+$array = pg_fetch_all($result);
 
-<?PHP
-// Open SQLite database
-try {
-    $db = new SQLite3('/home/iws3/final_project/door_log.db');
-} catch (Exception $exception) {
-    echo '<p>There was an error connecting to the database!</p>';
+# Output data as an HTML table
+echo "<table border='1'>
+<tr><th>Date and Time</th><th>Status</th></tr>";
+
+foreach ($array as $row) {
+    echo "<tr>";
+    echo "<td>" . htmlspecialchars($row['datetime']) . "</td>";
+    echo "<td>" . htmlspecialchars($row['status']) . "</td>";
+    echo "</tr>";
 }
-
-
-// Query to retrieve the door logs from the database
-$query = 'SELECT * FROM door_logs ORDER BY timestamp DESC LIMIT 10';
-$result = $db->query($query) or die('Query failed');
-
-// Loop through the results and display them in the table
-while ($row = $result->fetchArray()) {
-    echo "<tr><td>{$row['timestamp']}</td><td>{$row['status']}</td></tr>";
-}
+echo "</table>";
 ?>
-
-</table>
-
 </body>
 </html>
