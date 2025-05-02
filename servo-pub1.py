@@ -1,3 +1,7 @@
+# Isaac Schaafsma (iws3), Cliff Hardy (cah43)
+# Used code from lab5
+# This program is connected to two pushbuttons
+# which control the MQTT communication
 from signal import pause
 import time
 import pigpio
