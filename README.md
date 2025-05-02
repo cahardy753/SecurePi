@@ -21,3 +21,4 @@ We still want to setup facial recognition in the future despite the problems we 
 
 ## Credit
 Some of the code we used in this project is taken from the CS326 labs written by Professor Schuurman. Also the code used to program the ESP32 is taken from the example code it comes with.
+Rui santos wrote the code to integrate the servo control with the camera server.
